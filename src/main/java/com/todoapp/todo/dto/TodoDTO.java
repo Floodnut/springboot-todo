@@ -33,4 +33,13 @@ public class TodoDTO { //For TodoItem CRUD
         this.title = entity.getTitle();
         this.done = entity.isDone();
     }
+
+    //변환 : DTO to Entity
+    public static TodoEntity toEntity(final TodoDTO dto){
+        return TodoEntity.builder()
+                .id(dto.getId())
+                .title(dto.getTitle())
+                .done(dto.isDone())
+                .build();
+    }
 }
